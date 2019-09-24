@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:paddingTop="40dp"
+  android:paddingBottom="17dp"
+  android:paddingRight="10dp"
+  android:paddingLeft="10dp">
+
+  <ImageView
+    android:id="@+id/img_fingerprint"
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="25dp"
+    android:background="@drawable/bg_fingerprint"
+    android:padding="10dp"
+    android:tint="#0E72F0"
+    android:src="@drawable/ic_fingerprint" />
+
+  <TextView
+    android:id="@+id/item_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="12dp"
+    android:textColor="#2F323E"
+    android:textSize="22dp"
+    android:lineHeight="26dp"
+    android:textFontWeight="500" />
+
+  <TextView
+    android:id="@+id/item_description"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="50dp"
+    android:textSize="16dp"
+    android:lineHeight="24dp"
+    android:textColor="#9496A6" />
+
+  <Button
+    android:id="@+id/btn_cancel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:background="@null"
+    android:textColor="#0E72F0" />
+</LinearLayout>
