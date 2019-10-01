@@ -51,19 +51,16 @@ public class MainActivity extends AppCompatActivity {
         int err = BiometricManager.checkFingerprint(this);
         textView.setText(String.valueOf(err));
 
-        final BiometricManagerCallback biometricManagerCallback = new BiometricManagerCallback();
-
         button = findViewById(R.id.btn_authenticate);
-
-        final BiometricManager biometricManager = new BiometricManager(this)
-            .setTitle("FingerPrint to \"Open\"")
-            .setDescription("Use your fingerprint to open")
-            .setNegativeButtonText("Use code");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                BiometricManagerCallback biometricManagerCallback = new BiometricManagerCallback();
+                BiometricManager biometricManager = new BiometricManager(MainActivity.this)
+                    .setTitle("FingerPrint to \"Open\"")
+                    .setDescription("Use your fingerprint to open")
+                    .setNegativeButtonText("Use code");
                 biometricManager.authenticate(biometricManagerCallback);
             }
         });

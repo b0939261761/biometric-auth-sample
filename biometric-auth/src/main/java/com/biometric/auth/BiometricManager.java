@@ -90,7 +90,7 @@ public class BiometricManager {
         return READY;
     }
 
-    private void closeDialog() { if(biometricDialog != null) biometricDialog.cancel(); }
+    private void closeDialog() { if(biometricDialog != null) biometricDialog.dismiss(); }
 
     private void successDialog() { if(biometricDialog != null) biometricDialog.successStatus(); }
 
@@ -109,12 +109,10 @@ public class BiometricManager {
                         @Override
                         public void onAuthenticationError(int errMsgId, CharSequence errString) {
                             super.onAuthenticationError(errMsgId, errString);
-                            if (errMsgId == FingerprintManager.FINGERPRINT_ERROR_CANCELED) {
-                                closeDialog();
-                            } else {
-                                errorStatus();
+                            if (errMsgId != FingerprintManager.FINGERPRINT_ERROR_CANCELED) {
                                 biometricCallback.onAuthenticationError(errMsgId, errString);
                             }
+                            closeDialog();
                         }
 
                         @Override
